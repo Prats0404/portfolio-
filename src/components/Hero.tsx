@@ -5,10 +5,11 @@ import { motion } from 'framer-motion';
 import { Download, ChevronDown } from 'lucide-react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Points, PointMaterial } from '@react-three/drei';
+// @ts-ignore
 import * as random from 'maath/random/dist/maath-random.esm';
 
 function ParticleGlobe(props: any) {
-    const ref = useRef<any>();
+    const ref = useRef<any>(null);
     const sphere = random.inSphere(new Float32Array(5000), { radius: 1.5 });
 
     useFrame((state, delta) => {
