@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-neon-blue: var(--neon-blue);
+  --color-neon-purple: var(--neon-purple);
+  --color-neon-pink: var(--neon-pink);
+  
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+:root {
+  --background: #f8fafc;
+  --foreground: #020617;
+  --neon-blue: #0ea5e9;
+  --neon-purple: #8b5cf6;
+  --neon-pink: #ec4899;
+}
+
+.dark {
+  --background: #030014;
+  --foreground: #f8fafc;
+  --neon-blue: #00f3ff;
+  --neon-purple: #7000ff;
+  --neon-pink: #ff007f;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
+  }
+  .text-glow-purple {
+    text-shadow: 0 0 10px var(--neon-purple), 0 0 20px var(--neon-purple);
+  }
+  .box-glow {
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.3), 0 0 30px rgba(0, 243, 255, 0.1);
+  }
+  .box-glow-purple {
+    box-shadow: 0 0 15px rgba(112, 0, 255, 0.3), 0 0 30px rgba(112, 0, 255, 0.1);
+  }
+  .glass-panel {
+    background: rgba(3, 0, 20, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--neon-blue);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neon-purple);
+}
